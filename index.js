@@ -45,10 +45,6 @@ var getPlatforms = function (projectName) {
       { name: 'Default-Landscape-736h.png',    width: 2208, height: 1242 },
       { name: 'Default-2436h.png',             width: 1125, height: 2436 },
       { name: 'Default-Landscape-2436h.png',   width: 2436, height: 1125 },
-      { name: 'Default-2688h.png',             width: 1242, height: 2688 },
-      { name: 'Default-Landscape-2688h.png',   width: 2688, height: 1242 },
-      { name: 'Default-1792h.png',             width: 828, height: 1792 },
-      { name: 'Default-Landscape-1792h.png',   width: 1792, height: 828 },
       // iPad
       { name: 'Default-Portrait~ipad.png',     width: 768,  height: 1024 },
       { name: 'Default-Portrait@2x~ipad.png',  width: 1536, height: 2048 },
@@ -59,7 +55,28 @@ var getPlatforms = function (projectName) {
   platforms.push({
     name : 'android',
     isAdded : fs.existsSync('platforms/android'),
-    splashPath : 'platforms/android/res/',
+    splashPath : 'platforms/android/app/src/main/res/',
+    splash : [
+      // Landscape
+      { name: 'drawable-land-ldpi/screen.png',  width: 320,  height: 200  },
+      { name: 'drawable-land-mdpi/screen.png',  width: 480,  height: 320  },
+      { name: 'drawable-land-hdpi/screen.png',  width: 800,  height: 480  },
+      { name: 'drawable-land-xhdpi/screen.png', width: 1280, height: 720  },
+      { name: 'drawable-land-xxhdpi/screen.png', width: 1600, height: 960  },
+      { name: 'drawable-land-xxxhdpi/screen.png', width: 1920, height: 1280  },
+      // Portrait
+      { name: 'drawable-port-ldpi/screen.png',  width: 200,  height: 320  },
+      { name: 'drawable-port-mdpi/screen.png',  width: 320,  height: 480  },
+      { name: 'drawable-port-hdpi/screen.png',  width: 480,  height: 800  },
+      { name: 'drawable-port-xhdpi/screen.png', width: 720,  height: 1280 },
+      { name: 'drawable-port-xxhdpi/screen.png', width: 960, height: 1600  },
+      { name: 'drawable-port-xxxhdpi/screen.png', width: 1280, height: 1920  }
+    ]
+  });
+  platforms.push({
+    name : 'android_prepare',
+    isAdded : fs.existsSync('platforms/android'),
+    splashPath : 'splash/android/',
     splash : [
       // Landscape
       { name: 'drawable-land-ldpi/screen.png',  width: 320,  height: 200  },
